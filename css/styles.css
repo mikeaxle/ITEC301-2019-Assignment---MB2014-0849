@@ -1,0 +1,243 @@
+/* custom styles */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+.header {
+  background-color: grey;
+  border-bottom: 2px orangered solid;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 0.3;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.menu-item {
+  margin: 0 5px;
+  /* width: 100px; */
+  text-align: center;
+  font-size: 14px;
+  text-transform: capitalize;
+  font-weight: bold;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  border: 2px transparent solid;
+}
+
+.menu-item:hover {
+  border: 2px orangered solid;
+}
+
+.banner {
+  background-image: url("/img/banner.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 30vh;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.subscribe {
+  padding: 2%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: grey;
+  color: white;
+  font-weight: bold;
+}
+
+.subscribe form {
+  flex: 1;
+
+}
+
+.subscribe span {
+  flex: 1;
+
+}
+
+.subscribe form > input[type=text] {
+  width: 30vw
+}
+
+#products {
+  display: flex;
+  justify-content: space-between;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 1% 1%;
+  /* max-width: 150px; */
+}
+
+.product img {
+  width: 150px;
+  height: 150px;
+}
+
+#footer {
+  /* height: 100px; */
+  background-color: orangered;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  margin: auto;
+  width: 80%;
+  padding: 2% 0;
+}
+
+.content span {
+  display: flex;
+  flex-direction: column;
+  flex: 1
+}
+
+.content div {
+  display: flex;
+  flex-direction: row;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  background-color: grey;
+  color: white;
+  padding: 2%
+}
+
+.login input {
+  width: 100%
+}
+
+.about-us {
+  flex: 2;
+  padding: 0 2%;
+}
+
+.padding {
+  padding: 2% 5%;
+}
+
+.spacer {
+  padding: 10px;
+}
+
+input {
+  height: 45px;
+  margin: 0 1%;
+  margin: 1%
+}
+
+input[type=submit] {
+  background-color: orangered;
+  border: none;
+  padding: 5px 10px;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+form .error {
+  color: red;
+  font-size: smaller;
+}
+
+
+/* Media queries */
+@media screen and (max-width: 768px) {
+  .header {
+    background-color: grey;
+    border-bottom: 2px orangered solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .subscribe {
+    padding: 2% 0;
+    display: flex;
+    flex-direction: column;
+    background-color: grey;
+    color: white;
+    font-weight: bold;
+  }
+
+  .subscribe form {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    width: 100%;
+  
+  }
+
+  .subscribe form > input[type=text],input[type=submit]  {
+    width: 90%;
+  }
+
+  #products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1% 1%;
+    max-width: 100%;
+  }
+
+  input {
+    height: 45px;
+    width: 90%;
+    margin: 1%;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 80%;
+    padding: 2% 0;
+  }
+
+  .content div {
+    display: flex;
+    flex-direction: column;
+  }
+  
+
+
+}

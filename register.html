@@ -1,0 +1,234 @@
+<html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Farming Robots</title>
+  <meta name="description" content="Mike's farming Robots Home page">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- for mobile device home screens -->
+  <link rel="manifest" href="site.webmanifest">
+
+  <!-- apple touch icon  -->
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <!-- import styles -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- container -->
+  <div class="container">
+    <!-- header -->
+    <div class="header padding">
+      <!-- logo -->
+      <img src="img/logo.png" height="80" />
+
+      <!-- navigation menu -->
+      <div class="menu">
+        <!-- button -->
+        <a href="index.html" class="menu-item">
+          HOME
+        </a>
+        <a href="about.html" class="menu-item">
+          ABOUT
+        </a>
+        <a href="#" class="menu-item">
+          REGISTER
+        </a>
+      </div>
+    </div>
+
+
+
+    <!-- subscribe -->
+    <div class="subscribe">
+      <span>Subscribe</span>
+
+      <!-- subscribe form -->
+      <form>
+        <input type="text" placeholder="Enter email..." />
+        <input type="submit" value="Subscribe" id="subscribe" />
+      </form>
+    </div>
+
+    <div class="content" id="content">
+      <h2>Join Us</h2>
+      <form name="register">
+        <!--  name + surname -->
+        <div>
+          <span>
+            Name
+            <br>
+            <input type="text" name="firstName" id="firstName" placeholder="Enter Name..." />
+          </span>
+
+          <span>
+            Surname
+            <br>
+            <input type="text" name="surname" id="surname" placeholder="Enter Surname..." />
+          </span>
+        </div>
+
+        <!-- email -->
+        <span>
+          Email
+          <br><input type="email" name="email" id="email" placeholder="Enter Email..." />
+        </span>
+
+
+        <!-- password + confirm -->
+        <div>
+          <span>
+            Password
+            <br>
+            <input type="password" name="password" id="password" placeholder="Enter Password..." />
+          </span>
+
+          <span>
+            Confirm Password
+            <br>
+            <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password..." />
+          </span>
+        </div>
+
+        <!-- submit button -->
+        <br>
+        <input type="submit" value="register" id="register" />
+
+      </form>
+    </div>
+
+
+    <!-- footer -->
+    <div id="footer" class="padding">
+      there is text here
+    </div>
+  </div>
+
+  </div>
+
+
+  <!-- import javascript -->
+  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="js/vendor/jquery.validate.min.js"></script>
+  <script>
+    // after jquery is loaded
+    $(document).ready(() => {
+      // add custom validation method to JQuery validator
+      jQuery.validator.addMethod('checkForUpperCase', (value, element, param) => {
+        // check if value has upper case letter
+        return /[A-Z]/.test(value)
+
+      }, 'Password must have at least one upper case letter')
+
+      // add custom validation method to JQuery validator
+      jQuery.validator.addMethod('checkForLowerCase', (value, element, param) => {
+        // check if value has lower case letter
+        return /[a-z]/.test(value)
+
+      }, 'Password must have at least one lower case letter')
+
+      //check if value has digit
+      jQuery.validator.addMethod('checkForNumber', (value, element, param) => {
+        // check if value has number
+        return /[0-9]/.test(value)
+
+      }, 'Password must have at least one number')
+
+      //check if value has special character
+      jQuery.validator.addMethod('checkForSpecialCharacter', (value, element, param) => {
+        // check if value has lower case letter
+        return /[!@#\$%\^&]/.test(value)
+
+      }, 'Password must have at least one special character')
+
+      //check if value has special character
+      jQuery.validator.addMethod('checkLength', (value, element, param) => {
+        // check if value has lower case letter
+        return 8 === value.length
+
+      }, 'Password must be at least 8 characters long')
+
+      // get year
+      let year = new Date().getFullYear()
+
+      // set copyright text
+      let copyrightText = '<p style="text-align:center">Copyright Farming Robots &copy; ' + year +
+        ' <br>Developed by Michael Lungu</p>'
+      // update footer
+      $("#footer").html(copyrightText)
+
+      // add style to content tag
+      $('#content').css({
+        'flex-direction': 'column'
+      })
+
+      // set up validation rules
+      $("form[name='register']").validate({
+        rules: {
+          firstName: "required",
+          surname: "required",
+          email: {
+            required: true,
+            email: true
+          },
+          password: {
+            required: true,
+            // checkLength: true,
+            checkForUpperCase: true,
+            checkForLowerCase: true,
+            checkForNumber: true,
+            checkForSpecialCharacter: true
+
+          },
+          confirmPassword: {
+            required: true,
+            equalTo: '#password'
+          }
+        },
+        // set up validation messages
+        messages: {
+          firstName: 'Please enter your first name',
+          surname: 'Please enter your Surname',
+          password: {
+            required: 'Please provide a password',
+          },
+          confirmPassword: {
+            required: 'Please re-type your chosen password',
+          },
+          email: 'Please enter a valid e-mail address'
+        },
+        // set up form handler
+        submitHandler: (form) => {
+      
+          alert(`firstName: ${form.elements.namedItem('firstName').value}
+          \nsurnName: ${form.elements.namedItem('surname').value}
+          \nemail: ${form.elements.namedItem('email').value}
+          \npassword: ${form.elements.namedItem('password').value}
+          \nconfirmPassword: ${form.elements.namedItem('confirmPassword').value}
+          `)
+          console.log(form.elements)
+        }
+      })
+    })
+
+  </script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,132 @@
+<html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Farming Robots</title>
+  <meta name="description" content="Mike's farming Robots Home page">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- for mobile device home screens -->
+  <link rel="manifest" href="site.webmanifest">
+
+  <!-- apple touch icon  -->
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <!-- import styles -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- container -->
+  <div class="container">
+    <!-- header -->
+    <div class="header padding">
+      <!-- logo -->
+      <img src="img/logo.png" height="80" />
+
+      <!-- navigation menu -->
+      <div class="menu">
+        <!-- button -->
+        <a href="index.html" class="menu-item">
+          HOME
+        </a>
+        <a href="#" class="menu-item">
+          ABOUT
+        </a>
+        <a href="register.html" class="menu-item">
+          REGISTER
+        </a>
+      </div>
+    </div>
+
+    <!-- subscribe -->
+    <div class="subscribe">
+      <span>Subscribe</span>
+
+      <!-- subscribe form -->
+      <form>
+        <input type="text" placeholder="Enter email..." />
+        <input type="submit" value="Subscribe" />
+      </form>
+    </div>
+
+    <!-- content container -->
+    <div class="content">
+      <!-- login -->
+      <form class="login">
+        <h3>Login Here</h3>
+        Email
+        <input type="email" id="email" name="email" placeholder="Enter Email.." />
+        <br>
+        Password
+        <input type="password" id="password" name="password" placeholder="Enter Password..." />
+        <input type="submit" value="Login" />
+      </form>
+      <!-- about us -->
+      <div class="about-us">
+        <span>
+          <h2>About Us</h2>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+            scrambled it to make a type specimen book. </p>
+          <p> It has survived not only five centuries, but also the leap into
+            electronic typesetting, remaining essentially unchanged. </p>
+
+          <p> It was popularised in the 1960s with the release of
+            Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
+            Aldus
+            PageMaker including versions of Lorem Ipsum.</p>
+        </span>
+
+      </div>
+    </div>
+
+
+    <!-- footer -->
+    <div id="footer" class="padding">
+      there is text here
+    </div>
+  </div>
+
+  </div>
+
+
+  <!-- import javascript -->
+  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script>
+    // import JQuery
+    // window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')
+
+    // after jquery is loaded
+    $(document).ready(() => {
+      // get year
+      let year = new Date().getFullYear()
+
+      // set copyright text
+      let copyrightText = '<p style="text-align:center">Copyright Farming Robots &copy; ' + year +
+        ' <br>Developed by Michael Lungu</p>'
+
+      // update footer
+      $("#footer").html(copyrightText)
+
+    })
+
+  </script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>
